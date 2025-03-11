@@ -10,7 +10,7 @@ class Home extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text(
-          "Mrga Shop",
+          "Mega Shop",
           style: TextStyle(
             fontFamily: "DMSans",
             fontWeight: FontWeight.w700,
@@ -18,9 +18,24 @@ class Home extends StatelessWidget {
           ),
         ),
         actions: [
-          Icon(Iconsax.notification_bing_outline),
+          Container(
+            padding: EdgeInsets.all(10),
+            child: Icon(
+              Iconsax.notification_bing_outline,
+              color: Colors.black,
+            ),
+          ),
+          Container(
+            padding: EdgeInsets.all(10),
+            child: Icon(
+              HeroIcons.shopping_cart,
+              color: Colors.black,
+            ),
+          ),
         ],
         centerTitle: true,
+        elevation: 2,
+        backgroundColor: Color.fromARGB(227, 242, 255, 242),
       ),
     );
   }
