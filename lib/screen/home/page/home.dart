@@ -8,35 +8,49 @@ class Home extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text(
-          "Mega Shop",
-          style: TextStyle(
-            fontFamily: "DMSans",
-            fontWeight: FontWeight.w700,
-            color: FColors.oceanBlue,
+      appBar: FAppBar(),
+    );
+  }
+}
+
+class FAppBar extends StatelessWidget implements PreferredSizeWidget {
+  const FAppBar({
+    super.key,
+  });
+
+  @override
+  Size get preferredSize => const Size.fromHeight(kToolbarHeight);
+
+  @override
+  Widget build(BuildContext context) {
+    return AppBar(
+      title: Text(
+        "Mega Shop",
+        style: TextStyle(
+          fontFamily: "DMSans",
+          fontWeight: FontWeight.w700,
+          color: FColors.oceanBlue,
+        ),
+      ),
+      actions: [
+        Container(
+          padding: EdgeInsets.fromLTRB(10, 10, 5, 10),
+          child: Icon(
+            Iconsax.notification_bing_outline,
+            color: FColors.dark,
           ),
         ),
-        actions: [
-          Container(
-            padding: EdgeInsets.all(10),
-            child: Icon(
-              Iconsax.notification_bing_outline,
-              color: Colors.black,
-            ),
+        Container(
+          padding: EdgeInsets.fromLTRB(5, 10, 10, 10),
+          child: Icon(
+            IonIcons.cart,
+            color: FColors.dark,
           ),
-          Container(
-            padding: EdgeInsets.all(10),
-            child: Icon(
-              HeroIcons.shopping_cart,
-              color: Colors.black,
-            ),
-          ),
-        ],
-        centerTitle: true,
-        elevation: 2,
-        backgroundColor: Color.fromARGB(227, 242, 255, 242),
-      ),
+        ),
+      ],
+      centerTitle: true,
+      elevation: 2,
+      backgroundColor: Colors.white,
     );
   }
 }
